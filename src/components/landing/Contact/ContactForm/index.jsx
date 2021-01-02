@@ -26,7 +26,7 @@ export default () => (
     onSubmit={async ({ name, email, message }, { setSubmitting, resetForm, setFieldValue }) => {
       try {
         await Axios.post(
-          'https://hooks.slack.com/services/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',
+          process.env.SLACK_WEBHOOK,
           JSON.stringify({
             text: `Name: ${name}\nE-Mail: ${email}\n${message}`,
           })
