@@ -3,7 +3,7 @@ import { Formik, Form, FastField, ErrorMessage } from 'formik';
 import Recaptcha from 'react-google-recaptcha';
 import * as Yup from 'yup';
 import { Button, Input } from 'components/common';
-import { send } from 'emailjs-com';
+import Axios from 'axios';
 import { Error, Center, InputField } from './styles';
 
 export default () => (
@@ -25,11 +25,11 @@ export default () => (
     })}
     onSubmit={async ({ name, email, message }, { setSubmitting, resetForm, setFieldValue }) => {
       try {
-        await send(
-          process.env.EMAILJS_SERVICE_ID,
-          process.env.EMAILJS_TEMPLATE_ID,
-          { name, email, message },
-          process.env.EMAILJS_USER_ID
+        await Axios.post(
+          'https://hooks.slack.com/services/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',
+          JSON.stringify({
+            text: `Name: ${name}\nE-Mail: ${email}\n${message}`,
+          })
         );
         setSubmitting(false);
         setFieldValue('success', true);
