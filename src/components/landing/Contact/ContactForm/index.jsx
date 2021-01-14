@@ -25,12 +25,13 @@ export default () => (
     })}
     onSubmit={async ({ name, email, message }, { setSubmitting, resetForm, setFieldValue }) => {
       try {
-        await Axios.post(
-          process.env.SLACK_WEBHOOK,
-          JSON.stringify({
-            text: `Name: ${name}\nE-Mail: ${email}\n${message}`,
-          })
-        );
+        const text = `Name: ${name}\nE-Mail: ${email}\n${message}`;
+
+        await Axios.post(`${process.env.AUTO_CODE_LINK}`, JSON.stringify({ text }), {
+          headers: {
+            'content-type': 'application/json',
+          },
+        });
         setSubmitting(false);
         setFieldValue('success', true);
         setTimeout(() => resetForm(), 6000);
