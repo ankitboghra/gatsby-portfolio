@@ -43,6 +43,6 @@ export const Languages = styled.div``;
 
 export const Language = styled.div`
   display: inline-block;
-  padding: 0.1em 0.5em;
-  }
+  padding: 0.1em 0.5em 0.1em 0;
+  color: ${({ theme }) => (theme === 'light' ? '#707070' : '#c7c7c7')};
 `;
