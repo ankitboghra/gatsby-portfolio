@@ -19,7 +19,13 @@ export const Intro = () => {
           <h1>
             Hi There! <Wave>{emoji('👋')}</Wave>
           </h1>
-          <h4>I’m Ankit and I’m a Frontend engineer and a freelancer!</h4>
+          <h4>
+            I’m Ankit and I’m a web3 Frontend Engineer at{' '}
+            <a href="https://polygon.technology/" rel="noopener noreferrer">
+              Polygon
+            </a>
+            !
+          </h4>
           <Button as={AnchorLink} href="#contact">
             Hire me
           </Button>{' '}
@@ -28,7 +34,7 @@ export const Intro = () => {
           </StyledLink>
         </Details>
         <Thumbnail>
-          <img src={dev} alt="I’m Ankit and I’m a Frontend engineer and a freelancer!" />
+          <img src={dev} alt="Developer with laptop" />
         </Thumbnail>
       </IntroWrapper>
     </Wrapper>
