@@ -29,5 +29,5 @@ module.exports = {
     phone: '+91 80000 41280',
   },
   foundingDate: '2020',
-  resumeUrl: 'https://drive.google.com/uc?export=download&id=15YgB8cGOv1MSgvEW5ej_fih4aUa6zEMk',
+  resumeUrl: 'https://drive.google.com/uc?export=download&id=1oq-ESrZzltHBTzlLv4l2Wa3GC7LtrIBf',
 };
