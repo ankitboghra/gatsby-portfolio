@@ -37,6 +37,15 @@ export const Item = styled.div`
 
 export const Content = styled.div`
   padding: 1rem 0;
+
+  h4 {
+    display: inline;
+  }
+  span {
+    display: inline;
+    color: ${({ theme }) => (theme === 'light' ? '#707070' : '#c7c7c7')};
+    font-weight: normal;
+  }
 `;
 
 export const Languages = styled.div``;
